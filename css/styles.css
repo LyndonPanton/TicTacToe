@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-color: #CC00FF;
+}
+
 .row {
 	margin: 0;
 }
@@ -35,6 +39,7 @@
 #footer {
 	text-align: center;
 	margin-top: 4%;
+	color: #FFFFFF;
 }
 
 #game {
@@ -46,7 +51,9 @@
 }
 
 #header {
+	color: #FFFFFF;
 	text-align: center;
+	text-decoration: underline;
 }
 
 #left-bottom {
@@ -63,12 +70,28 @@
 	border-bottom: 1px #000000 solid;
 }
 
+#message {
+	display: block;
+	margin-top: 50px; 
+	font-size: 40px;
+	color: #00FF00;
+}
+
+#oMessage {
+	float: right;
+}
+
+#oScore {
+	color: #0000FF;
+}
+
 #result {
 	width: 28%;
 	border: 1px #000000 solid;
 	border-radius: 4px;
 	padding: 2%;
 	text-align: center;
+	background-color: #EEEEEE;
 }
 
 #resetButton {
@@ -88,4 +111,24 @@
 #right-top {
 	border-bottom: 1px #000000 solid;
 	border-left: 1px #000000 solid;
+}
+
+#tally {
+	display: block;
+	font-size: 20px;
+	margin-top: 80px;
+}
+
+#xMessage {
+	float: left;
+}
+
+#xScore {
+	color: #FF0000;
+}
+
+@media screen and (min-width: 600px) {
+	#tally {
+		font-size: 30px;
+	}
 }
