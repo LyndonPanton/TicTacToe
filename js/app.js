@@ -1,3 +1,4 @@
+// Set the year dynamically
 let year = (new Date()).getFullYear();
 let yearSpan = document.getElementById("year");
 yearSpan.textContent = year;
@@ -16,17 +17,21 @@ resetButton.addEventListener("click", resetBoard);
 
 let turn = "X";
 
+// Give all squares a click event listener
 let squares = document.getElementsByClassName("square");
 for (let i = 0; i < squares.length; i++) {
 	squares[i].addEventListener("click", attempt);
 }
 
 function attempt() {
-	console.log(`click!`);
 	if (turn === "X") {
+		// Change the square's text
 		this.textContent = turn;
+		// Check for win condition
 		check();
+		// Disable the square
 		this.removeEventListener("click", attempt);
+		// Change the symbol for the next turn
 		turn = "O";
 	} else {
 		this.textContent = turn;
@@ -87,28 +92,34 @@ function check() {
 }
 
 function resetBoard() {
+	// Empty the message box
 	message.textContent = "";
+	// Remove all event listeners
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].removeEventListener("click", attempt);
 		squares[i].textContent = "";
 	}
-
+	// Readd the event listeners
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].addEventListener("click", attempt);
 	}
 
+	// Make sure X starts
 	turn = "X";
 }
 
 function win(symbol) {
-	console.log(`${symbol}'s wins.`);
-
-	if (turn === "X") {
+	// Add one to the winning symbol's score
+	if (symbol === "X") {
 		xScore.textContent = Number(xScore.textContent) + 1;
 	} else {
 		oScore.textContent = Number(oScore.textContent) + 1;
 	}
 
+	// Display a message
+	message.textContent = `${symbol} wins!`;
+
+	// Display the board
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].removeEventListener("click", attempt);
 	}
