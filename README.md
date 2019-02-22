@@ -16,6 +16,10 @@
 - The browser needs to have Javascipt available and enabled
 
 ### Preview
-
+![StartingScreen.png](./img/StartingScreen.png)
+![MidMatch.png](./img/MidMatch.png)
+![XWin.png](./img/XWin.png)
+![Draw.png](./img/Draw.png)
+![OWin.png](./img/OWin.png)
 
 **Thank you for downloading this project :)**
