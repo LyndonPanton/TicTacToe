@@ -6,6 +6,11 @@ let topRow = document.getElementById("row-top");
 let middleRow = document.getElementById("row-middle");
 let bottomRow = document.getElementById("row-bottom");
 
+let resetButton = document.getElementById("resetButton");
+let message = document.getElementById("message");
+
+resetButton.addEventListener("click", resetBoard);
+
 let turn = "X";
 
 let squares = document.getElementsByClassName("square");
@@ -54,7 +59,17 @@ function check() {
 	}
 }
 
+function resetBoard() {
+	message.textContent = "";
+	for (let i = 0; i < squares.length; i++) {
+		squares[i].removeEventListener("click", attempt);
+		squares[i].textContent = ""
+	}
 
+	for (let i = 0; i < squares.length; i++) {
+		squares[i].addEventListener("click", attempt);
+	}
+}
 
 function win(symbol) {
 	console.log(`${symbol}'s wins.`);
