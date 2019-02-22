@@ -86,9 +86,13 @@ function check() {
 		win(turn);
 	} else if (lB === "O" && cM === "O" && rT === "O") { // O bottom left diagonal win
 		win(turn);
-	} else {
-
+	} else if (lT !== "" && lM !== "" && lB !== "" && cT !== "" && cM !== "" && cB !== "" && rT !== "" && rM !== "" && rB !== "") {
+		draw();
 	}
+}
+
+function draw() {
+	message.textContent = "Draw!";
 }
 
 function resetBoard() {
