@@ -24,9 +24,11 @@ function attempt() {
 	if (turn === "X") {
 		this.textContent = turn;
 		turn = "O";
+		this.removeEventListener("click", attempt);
 	} else {
 		this.textContent = turn;
 		turn = "X";
+		this.removeEventListener("click", attempt);
 	}
 }
 
