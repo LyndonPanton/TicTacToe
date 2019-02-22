@@ -13,7 +13,12 @@
 	font-size: 50px;
 	font-weight: lighter;
 	text-align: center;
-} 
+}
+
+#app {
+	display: flex;
+	flex-wrap: wrap;
+}
 
 #center-bottom {
 	border-top: 1px #000000 solid;
@@ -29,6 +34,11 @@
 
 #footer {
 	text-align: center;
+	margin-top: 4%;
+}
+
+#game {
+	width: 70%;
 }
 
 #grid {
@@ -51,6 +61,19 @@
 #left-top {
 	border-right: 1px #000000 solid;
 	border-bottom: 1px #000000 solid;
+}
+
+#result {
+	width: 28%;
+	border: 1px #000000 solid;
+	border-radius: 4px;
+	padding: 2%;
+	text-align: center;
+}
+
+#resetButton {
+	margin: 10px auto 0;
+	display: block;
 }
 
 #right-bottom {
